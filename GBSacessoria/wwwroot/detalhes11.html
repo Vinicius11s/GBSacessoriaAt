@@ -10,6 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
+    <header class="topbar" role="banner">
+        <div style="display:flex;align-items:center;gap:18px">
+            <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="2" rx="1" fill="#111" />
+                    <rect y="7" width="22" height="2" rx="1" fill="#111" />
+                    <rect y="14" width="22" height="2" rx="1" fill="#111" />
+                </svg>
+            </button>
+
+            <div class="brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="images/LogoFundoBrancoComNome.png" alt="GBS Assessoria" class="logo">
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-pills" aria-label="NavegaÃ§Ã£o principal">
+            <a href="todasasareas.html" class="pill">Acessar Todas as Ãreas</a>
+            <a href="todasasareas.html?estado=MS" class="pill">Mato Grosso do Sul</a>
+            <a href="todasasareas.html?estado=SP" class="pill">SÃ£o Paulo</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="https://wa.me/5518996194671?text=OlÃ¡%20gostaria%20de%20vender%20meu%20imÃ³vel">QUERO VENDER O MEU IMÃ“VEL</a>
+            <a href="sobre.html">SOBRE A GBS ACESSORIA</a>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="todasasareas.html" class="mobile-menu-link">Acessar Todas as Ãreas</a>
+            <a href="todasasareas.html?estado=MS" class="mobile-menu-link">Mato Grosso do Sul</a>
+            <a href="todasasareas.html?estado=SP" class="mobile-menu-link">SÃ£o Paulo</a>
+            <a href="https://wa.me/5518996194671?text=OlÃ¡%20gostaria%20de%20vender%20meu%20imÃ³vel" class="mobile-menu-link">QUERO VENDER O MEU IMÃ“VEL</a>
+            <a href="sobre.html" class="mobile-menu-link">SOBRE A GBS ACESSORIA</a>
+        </div>
+    </div>
 
     <main class="container">
 
@@ -259,10 +299,65 @@
             });
         });
     </script>
-                <!-- Sistema para carregar layout.html original -->
-    <script src="js/template-include.js"></script>
+                
+    <br/>
+    <br/>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/GBS assessoria logo.PNG" alt="GBS Assessoria" class="logo">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li>+55 18 99619-4671</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Ãreas de atuaÃ§Ã£o</h3>
+                <ul>
+                    <li>RegiÃ£o de Presidente Prudente</li>
+                    <li>regiÃ£o leste do estado de Mato Grosso do Sul</li>
+                    <li>Bataguassu</li>
+                    <li>Nova Andradina</li>
+                    <li>Santa Rita do Pardo</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Institucional</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="https://wa.me/5518996194671?text=OlÃ¡%20gostaria%20de%anuncuar%20meu%20imÃ³vel">Anuncie seu imÃ³vel</a></li>
+                    <li><a href="https://wa.me/5518996194671?text=OlÃ¡%20gostaria%20de%20mais%20informaÃ§Ãµes">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-dropdown">
+                <button class="dropdown-toggle">
+                    Comprar ou alugar
+                    <span class="arrow-down">&#9660;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <div class="footer-copyright">
+                CRECI 278448 F - Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>
+
 
 
 
