@@ -7,6 +7,7 @@ class TemplateManager {
 
     async loadLayout() {
         try {
+            // Tentar carregar o layout via fetch
             const response = await fetch(this.layoutPath);
             if (!response.ok) {
                 throw new Error(`Erro ao carregar layout: ${response.status}`);
@@ -14,9 +15,33 @@ class TemplateManager {
             const layoutHtml = await response.text();
             return layoutHtml;
         } catch (error) {
-            console.error('Erro ao carregar layout:', error);
-            return null;
+            console.error('Erro ao carregar layout via fetch:', error);
+            
+            // Fallback: tentar carregar via XMLHttpRequest
+            try {
+                return await this.loadLayoutXHR();
+            } catch (xhrError) {
+                console.error('Erro ao carregar layout via XHR:', xhrError);
+                return null;
+            }
         }
+    }
+
+    loadLayoutXHR() {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', this.layoutPath, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject(new Error(`XHR Error: ${xhr.status}`));
+                    }
+                }
+            };
+            xhr.send();
+        });
     }
 
     async applyTemplate(contentHtml) {
