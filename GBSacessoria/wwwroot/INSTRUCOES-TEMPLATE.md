@@ -1,20 +1,21 @@
-# Sistema de Template para Netlify
+# Sistema de Template usando layout.html Original
 
 ## Problema Resolvido
-O sistema anterior tentava carregar o `layout.html` via fetch, mas o Netlify não permite isso devido a restrições de CORS.
+Agora todas as páginas HTML usam o seu arquivo `layout.html` original como template padrão.
 
 ## Solução Implementada
-Criado um sistema de template inline que funciona perfeitamente com Netlify:
+Criado um sistema que carrega o arquivo `layout.html` original e o aplica a todas as páginas:
 
 ### Arquivos Principais:
-- `js/layout-inline.js` - Sistema de template com layout inline
+- `js/template-include.js` - Sistema que carrega o layout.html original
+- `layout.html` - Seu arquivo de layout original (navbar + footer)
 - Todas as páginas HTML foram atualizadas para usar este sistema
 
 ### Como Funciona:
-1. O layout HTML (navbar + footer) está embutido no JavaScript
-2. Quando a página carrega, o script extrai o conteúdo principal
+1. O script carrega o seu arquivo `layout.html` original
+2. Extrai o conteúdo principal da página atual
 3. Aplica o layout completo (navbar + conteúdo + footer)
-4. Funciona sem problemas no Netlify
+4. Usa múltiplos métodos para garantir compatibilidade com Netlify
 
 ### Páginas Atualizadas:
 - ✅ index.html
@@ -27,11 +28,11 @@ Criado um sistema de template inline que funciona perfeitamente com Netlify:
 Abra `teste-template.html` no navegador para verificar se o sistema está funcionando.
 
 ### Vantagens:
-- ✅ Funciona no Netlify
-- ✅ Não requer servidor
+- ✅ Usa o seu arquivo layout.html original
+- ✅ Funciona no Netlify com múltiplos métodos de fallback
 - ✅ Layout consistente em todas as páginas
-- ✅ Manutenção centralizada
-- ✅ Carregamento rápido
+- ✅ Manutenção centralizada no layout.html
+- ✅ Carregamento robusto
 
 ## Para Manter:
-Se precisar alterar a navbar ou footer, edite o arquivo `js/layout-inline.js` na função `getLayoutHTML()`.
+Se precisar alterar a navbar ou footer, edite apenas o arquivo `layout.html` - todas as páginas usarão automaticamente as mudanças.
