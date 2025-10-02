@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/todosImoveis.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Ícones Lucide para as setas -->
+    <!-- Ãcones Lucide para as setas -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -46,7 +46,7 @@
 
         <!-- Header de Resultados e Filtros -->
         <div class="results-header">
-            <div class="count" id="count-display">16 áreas selecionadas</div>
+            <div class="count" id="count-display">16 Ã¡reas selecionadas</div>
             <h1 class="main-title" id="main-title">Resultados de pesquisa</h1>
             <div class="controls">
                 <button class="refine-btn">
@@ -57,8 +57,8 @@
                     <label for="sort" class="text-sm text-gray-600 hidden sm:block">Ordenar por:</label>
                     <select id="sort" class="sort-dropdown">
                         <option>Mais relevantes</option>
-                        <option>Menor preço</option>
-                        <option>Maior preço</option>
+                        <option>Menor preÃ§o</option>
+                        <option>Maior preÃ§o</option>
                     </select>
                 </div>
             </div>
@@ -66,17 +66,17 @@
 
         <!-- Grid de Cards -->
         <div class="cards-grid" id="cards-container">
-            <!-- Cards serão inseridos aqui pelo JavaScript -->
+            <!-- Cards serÃ£o inseridos aqui pelo JavaScript -->
         </div>
 
         <!-- Scripts para criar cards com slider -->
         <script>
-                // Função para gerar URLs das imagens reais
+                // FunÃ§Ã£o para gerar URLs das imagens reais
                 function getImageUrl(propertyCode, imageIndex) {
                     const basePath = 'images';
                     let imageName;
                     
-                    // Converte o código para número (01 -> 1, 02 -> 2, etc.)
+                    // Converte o cÃ³digo para nÃºmero (01 -> 1, 02 -> 2, etc.)
                     const folderNumber = parseInt(propertyCode);
                     
                     if (imageIndex === 0) {
@@ -88,14 +88,14 @@
                     return `${basePath}/${folderNumber}/${imageName}`;
                 }
 
-                // Dados dos Imóveis (Baseados nos cards da index)
+                // Dados dos ImÃ³veis (Baseados nos cards da index)
                 const propertyData = [
                     // PROPRIEDADES EXCLUSIVAS (6 primeiras - mais relevantes)
                     {
-                        title: "480 hectares à venda na região de Presidente Prudente - SP",
+                        title: "480 hectares Ã  venda na regiÃ£o de Presidente Prudente - SP",
                         code: "13",
-                        location: "Presidente Epitácio - SP",
-                        details: "480 hectares | 198 alqueires | 6km da cidade | Montada na pecuária",
+                        location: "Presidente EpitÃ¡cio - SP",
+                        details: "480 hectares | 198 alqueires | 6km da cidade | Montada na pecuÃ¡ria",
                         price: "R$ 120.000/ALQUEIRE",
                         isExclusive: true,
                         imageSeed: 13,
@@ -103,7 +103,7 @@
                         link: "detalhes13.html"
                     },
                     {
-                        title: "Fazenda montadíssima à venda na região de Santa Rita do Pardo",
+                        title: "Fazenda montadÃ­ssima Ã  venda na regiÃ£o de Santa Rita do Pardo",
                         code: "11",
                         location: "Santa Rita do Pardo - MS",
                         details: "129 hectares | 54 alqueires | 40km de Bataguassu | 2 casas",
@@ -114,10 +114,10 @@
                         link: "detalhes11.html"
                     },
                     {
-                        title: "Propriedade à venda no município de Bataguassu - MS",
+                        title: "Propriedade Ã  venda no municÃ­pio de Bataguassu - MS",
                         code: "12",
                         location: "Bataguassu - MS",
-                        details: "3km do asfalto | 2 casas | Curral 6 divisões | Energia trifásica",
+                        details: "3km do asfalto | 2 casas | Curral 6 divisÃµes | Energia trifÃ¡sica",
                         price: "R$ 114.000/ALQUEIRE",
                         isExclusive: true,
                         imageSeed: 12,
@@ -125,10 +125,10 @@
                         link: "detalhes12.html"
                     },
                     {
-                        title: "Propriedade à venda região de Presidente Prudente - SP",
+                        title: "Propriedade Ã  venda regiÃ£o de Presidente Prudente - SP",
                         code: "05",
                         location: "Presidente Prudente - SP",
-                        details: "43 hectares | Terra rica em água | Casa sede",
+                        details: "43 hectares | Terra rica em Ã¡gua | Casa sede",
                         price: "R$ 120.000/ALQUEIRE",
                         isExclusive: true,
                         imageSeed: 5,
@@ -136,10 +136,10 @@
                         link: "detalhes05.html"
                     },
                     {
-                        title: "Fazenda à venda no município de Bataguassu - MS",
+                        title: "Fazenda Ã  venda no municÃ­pio de Bataguassu - MS",
                         code: "01",
                         location: "Bataguassu - MS",
-                        details: "Casa | Curral | Barracão | Poço Artesiano",
+                        details: "Casa | Curral | BarracÃ£o | PoÃ§o Artesiano",
                         price: "R$ 150.000/ALQUEIRE",
                         isExclusive: true,
                         imageSeed: 1,
@@ -147,7 +147,7 @@
                         link: "detalhes01.html"
                     },
                     {
-                        title: "Fazenda à venda na região de Nova Andradina - MS",
+                        title: "Fazenda Ã  venda na regiÃ£o de Nova Andradina - MS",
                         code: "14",
                         location: "Nova Andradina - MS",
                         details: "283 hectares | 118 alqueires | 7km do asfalto | Plantada mandioca",
@@ -159,10 +159,10 @@
                     },
                     // PROPRIEDADES REGULARES (sem exclusividade)
                     {
-                        title: "Fazenda à venda na região de Santa Rita do Pardo - MS",
+                        title: "Fazenda Ã  venda na regiÃ£o de Santa Rita do Pardo - MS",
                         code: "02",
                         location: "Santa Rita do Pardo - MS",
-                        details: "Casa | Curral | Barracão | Energia",
+                        details: "Casa | Curral | BarracÃ£o | Energia",
                         price: "R$ 85.000/ALQUEIRE",
                         isExclusive: false,
                         imageSeed: 2,
@@ -170,9 +170,9 @@
                         link: "detalhes02.html"
                     },
                     {
-                        title: "Propriedade à venda região de Presidente Prudente SP",
+                        title: "Propriedade Ã  venda regiÃ£o de Presidente Prudente SP",
                         code: "03",
-                        location: "Presidente Epitácio - SP",
+                        location: "Presidente EpitÃ¡cio - SP",
                         details: "24 hectares | 10 alqueires | Topografia plana",
                         price: "R$ 110.000/ALQUEIRE",
                         isExclusive: false,
@@ -181,10 +181,10 @@
                         link: "detalhes03.html"
                     },
                     {
-                        title: "Fazenda à venda na região de Presidente Prudente - SP",
+                        title: "Fazenda Ã  venda na regiÃ£o de Presidente Prudente - SP",
                         code: "04",
-                        location: "Santo Anastácio - SP",
-                        details: "175 hectares | Curral | Cercas novas | 2 córregos",
+                        location: "Santo AnastÃ¡cio - SP",
+                        details: "175 hectares | Curral | Cercas novas | 2 cÃ³rregos",
                         price: "R$ 123.000/ALQUEIRE",
                         isExclusive: false,
                         imageSeed: 4,
@@ -192,10 +192,10 @@
                         link: "detalhes04.html"
                     },
                     {
-                        title: "Propriedade à venda 25 km de Presidente Prudente - SP",
+                        title: "Propriedade Ã  venda 25 km de Presidente Prudente - SP",
                         code: "06",
                         location: "Presidente Prudente - SP",
-                        details: "72 hectares | 5 km do asfalto | Ótima Topografia",
+                        details: "72 hectares | 5 km do asfalto | Ã“tima Topografia",
                         price: "R$ 160.000/ALQUEIRE",
                         isExclusive: false,
                         imageSeed: 6,
@@ -203,10 +203,10 @@
                         link: "detalhes06.html"
                     },
                     {
-                        title: "Fazenda à venda região de Presidente Prudente - SP",
+                        title: "Fazenda Ã  venda regiÃ£o de Presidente Prudente - SP",
                         code: "07",
                         location: "Presidente Prudente - SP",
-                        details: "160 hectares | 67 alqueires | 5km da cidade | Documentação OK",
+                        details: "160 hectares | 67 alqueires | 5km da cidade | DocumentaÃ§Ã£o OK",
                         price: "R$ 135.000/ALQUEIRE",
                         isExclusive: false,
                         imageSeed: 7,
@@ -214,7 +214,7 @@
                         link: "detalhes07.html"
                     },
                     {
-                        title: "Propriedade à venda região de Presidente Prudente - SP",
+                        title: "Propriedade Ã  venda regiÃ£o de Presidente Prudente - SP",
                         code: "08",
                         location: "Presidente Prudente - SP",
                         details: "172 hectares | 72 alqueires | 2km do asfalto | Casa sede",
@@ -225,10 +225,10 @@
                         link: "detalhes08.html"
                     },
                     {
-                        title: "Propriedade à venda na região de Bataguassu - MS",
+                        title: "Propriedade Ã  venda na regiÃ£o de Bataguassu - MS",
                         code: "09",
                         location: "Bataguassu - MS",
-                        details: "44 hectares | 18 alqueires | Casa | Curral | Energia trifásica",
+                        details: "44 hectares | 18 alqueires | Casa | Curral | Energia trifÃ¡sica",
                         price: "R$ 120.000/ALQUEIRE",
                         isExclusive: false,
                         imageSeed: 9,
@@ -236,10 +236,10 @@
                         link: "detalhes09.html"
                     },
                     {
-                        title: "Fazenda à venda na região de Bataguassu - MS",
+                        title: "Fazenda Ã  venda na regiÃ£o de Bataguassu - MS",
                         code: "10",
                         location: "Bataguassu - MS",
-                        details: "280 hectares | 117 alqueires | 35min da cidade | Ótima estrutura",
+                        details: "280 hectares | 117 alqueires | 35min da cidade | Ã“tima estrutura",
                         price: "R$ 95.000/ALQUEIRE",
                         isExclusive: false,
                         isLaunch: true,
@@ -248,10 +248,10 @@
                         link: "detalhes10.html"
                     },
                     {
-                        title: "Propriedade à venda na região de Presidente Prudente - SP",
+                        title: "Propriedade Ã  venda na regiÃ£o de Presidente Prudente - SP",
                         code: "15",
-                        location: "Presidente Epitácio - SP",
-                        details: "55 hectares | 23 alqueires | 1,5 km da cidade | Ótima localização",
+                        location: "Presidente EpitÃ¡cio - SP",
+                        details: "55 hectares | 23 alqueires | 1,5 km da cidade | Ã“tima localizaÃ§Ã£o",
                         price: "R$ 140.000/ALQUEIRE",
                         isExclusive: false,
                         isLaunch: true,
@@ -260,9 +260,9 @@
                         link: "detalhes15.html"
                     },
                     {
-                        title: "Fazenda à venda - 242 hectares ou 100 alqueires",
+                        title: "Fazenda Ã  venda - 242 hectares ou 100 alqueires",
                         code: "16",
-                        location: "Região de atuação",
+                        location: "RegiÃ£o de atuaÃ§Ã£o",
                         details: "242 hectares | 100 alqueires | 5km da cidade | Documento 100%",
                         price: "R$ 90.000/ALQUEIRE",
                         isExclusive: false,
@@ -276,7 +276,7 @@
                 function createCardHTML(property, index) {
                     const id = `card-${index}`;
                     const images = [];
-                    // Cada card terá 3 fotos usando as imagens reais
+                    // Cada card terÃ¡ 3 fotos usando as imagens reais
                     for (let i = 0; i < 3; i++) {
                         const imageUrl = getImageUrl(property.code, i);
                         console.log(`Card ${property.code} - Imagem ${i}: ${imageUrl}`);
@@ -291,7 +291,7 @@
                         <a href="${property.link}" class="card" id="${id}">
                             <div class="card-imagem-container">
                                 ${property.isExclusive ? '<span class="badge">EXCLUSIVIDADE</span>' : ''}
-                                ${property.isLaunch ? '<span class="badge badge-launch">LANÇAMENTO</span>' : ''}
+                                ${property.isLaunch ? '<span class="badge badge-launch">LANÃ‡AMENTO</span>' : ''}
                                 <div class="card-slider" style="transform: translateX(0%);">
                                     ${images.join('')}
                                 </div>
@@ -322,7 +322,7 @@
                     `;
                 }
 
-                // Função para filtrar propriedades por estado
+                // FunÃ§Ã£o para filtrar propriedades por estado
                 function filterPropertiesByState(properties, estado) {
                     if (!estado) return properties;
                     
@@ -331,7 +331,7 @@
                     });
                 }
 
-                // Função para ordenar propriedades baseado em parâmetros da URL
+                // FunÃ§Ã£o para ordenar propriedades baseado em parÃ¢metros da URL
                 function getOrderedProperties() {
                     const urlParams = new URLSearchParams(window.location.search);
                     const showLancamentos = urlParams.get('lancamentos') === 'true';
@@ -341,7 +341,7 @@
                     let filteredProperties = filterPropertiesByState(propertyData, estado);
                     
                     if (showLancamentos) {
-                        // Ordena com lançamentos primeiro, depois exclusivas, depois regulares
+                        // Ordena com lanÃ§amentos primeiro, depois exclusivas, depois regulares
                         return [...filteredProperties].sort((a, b) => {
                             if (a.isLaunch && !b.isLaunch) return -1;
                             if (!a.isLaunch && b.isLaunch) return 1;
@@ -351,36 +351,36 @@
                         });
                     }
                     
-                    // Ordem padrão (exclusivas primeiro)
+                    // Ordem padrÃ£o (exclusivas primeiro)
                     return filteredProperties;
                 }
 
-                // Função para extrair valor numérico do preço
+                // FunÃ§Ã£o para extrair valor numÃ©rico do preÃ§o
                 function extractPriceValue(priceString) {
                     if (priceString === 'CONSULTAR') {
-                        return 999999999; // Valor muito alto para "CONSULTAR" aparecer por último
+                        return 999999999; // Valor muito alto para "CONSULTAR" aparecer por Ãºltimo
                     }
                     
-                    // Remove "R$", espaços, pontos e vírgulas
+                    // Remove "R$", espaÃ§os, pontos e vÃ­rgulas
                     const cleanPrice = priceString.replace(/[R$\s.,]/g, '');
                     const numericValue = parseInt(cleanPrice);
                     
                     return isNaN(numericValue) ? 999999999 : numericValue;
                 }
 
-                // Função para ordenar propriedades
+                // FunÃ§Ã£o para ordenar propriedades
                 function sortProperties(properties, sortType) {
                     const sorted = [...properties];
                     
                     switch (sortType) {
-                        case 'Menor preço':
+                        case 'Menor preÃ§o':
                             return sorted.sort((a, b) => {
                                 const priceA = extractPriceValue(a.price);
                                 const priceB = extractPriceValue(b.price);
                                 return priceA - priceB;
                             });
                             
-                        case 'Maior preço':
+                        case 'Maior preÃ§o':
                             return sorted.sort((a, b) => {
                                 const priceA = extractPriceValue(a.price);
                                 const priceB = extractPriceValue(b.price);
@@ -403,7 +403,7 @@
                     }
                 }
 
-                // Função para atualizar contador e título
+                // FunÃ§Ã£o para atualizar contador e tÃ­tulo
                 function updateHeaderInfo(properties) {
                     const countDisplay = document.getElementById('count-display');
                     const mainTitle = document.getElementById('main-title');
@@ -412,22 +412,22 @@
                     
                     // Atualiza contador
                     if (countDisplay) {
-                        countDisplay.textContent = `${properties.length} áreas selecionadas`;
+                        countDisplay.textContent = `${properties.length} Ã¡reas selecionadas`;
                     }
                     
-                    // Atualiza título baseado no filtro
+                    // Atualiza tÃ­tulo baseado no filtro
                     if (mainTitle) {
                         if (estado === 'MS') {
-                            mainTitle.textContent = 'Áreas em Mato Grosso do Sul';
+                            mainTitle.textContent = 'Ãreas em Mato Grosso do Sul';
                         } else if (estado === 'SP') {
-                            mainTitle.textContent = 'Áreas em São Paulo';
+                            mainTitle.textContent = 'Ãreas em SÃ£o Paulo';
                         } else {
                             mainTitle.textContent = 'Resultados de pesquisa';
                         }
                     }
                 }
 
-                // Função para renderizar cards
+                // FunÃ§Ã£o para renderizar cards
                 function renderCards(properties) {
                     const grid = document.getElementById('cards-container');
                     if (!grid) return;
@@ -435,10 +435,10 @@
                     const cardsHTML = properties.map((property, index) => createCardHTML(property, index)).join('');
                     grid.innerHTML = cardsHTML;
                     
-                    // Atualiza header com informações do filtro
+                    // Atualiza header com informaÃ§Ãµes do filtro
                     updateHeaderInfo(properties);
                     
-                    // Inicializa ícones Lucide
+                    // Inicializa Ã­cones Lucide
                     if (typeof lucide !== 'undefined') {
                         lucide.createIcons();
                     }
@@ -446,74 +446,74 @@
 
                 // Renderiza os cards na grid
                 document.addEventListener('DOMContentLoaded', () => {
-                    console.log('🚀 Iniciando renderização dos cards...');
+                    console.log('ðŸš€ Iniciando renderizaÃ§Ã£o dos cards...');
                     
                     const grid = document.getElementById('cards-container');
                     console.log('Grid encontrado:', !!grid);
                     
                     if (!grid) {
-                        console.error('❌ Grid não encontrado!');
+                        console.error('âŒ Grid nÃ£o encontrado!');
                         return;
                     }
                     
                     const orderedProperties = getOrderedProperties();
-                    console.log('📊 Propriedades ordenadas:', orderedProperties.length);
+                    console.log('ðŸ“Š Propriedades ordenadas:', orderedProperties.length);
                     
                     if (orderedProperties.length === 0) {
-                        console.error('❌ Nenhuma propriedade encontrada!');
+                        console.error('âŒ Nenhuma propriedade encontrada!');
                         return;
                     }
                     
                     renderCards(orderedProperties);
-                    console.log('✅ Cards inseridos no grid');
+                    console.log('âœ… Cards inseridos no grid');
                     
-                    // Event listener para ordenação
+                    // Event listener para ordenaÃ§Ã£o
                     const sortSelect = document.getElementById('sort');
                     if (sortSelect) {
                         sortSelect.addEventListener('change', (e) => {
                             const sortType = e.target.value;
-                            console.log('🔄 Ordenando por:', sortType);
+                            console.log('ðŸ”„ Ordenando por:', sortType);
                             
                             const sortedProperties = sortProperties(propertyData, sortType);
                             renderCards(sortedProperties);
-                            console.log('✅ Cards reordenados');
+                            console.log('âœ… Cards reordenados');
                         });
                     }
                     
-                    // Atualiza o título se estiver no modo lançamentos
+                    // Atualiza o tÃ­tulo se estiver no modo lanÃ§amentos
                     const urlParams = new URLSearchParams(window.location.search);
                     const showLancamentos = urlParams.get('lancamentos') === 'true';
                     const estado = urlParams.get('estado');
-                    console.log('🔍 Modo lançamentos:', showLancamentos);
-                    console.log('🔍 Estado filtrado:', estado);
+                    console.log('ðŸ” Modo lanÃ§amentos:', showLancamentos);
+                    console.log('ðŸ” Estado filtrado:', estado);
                     
                     if (showLancamentos) {
                         const mainTitle = document.querySelector('.main-title');
                         if (mainTitle) {
                             if (estado === 'MS') {
-                                mainTitle.textContent = 'Lançamentos em Mato Grosso do Sul';
+                                mainTitle.textContent = 'LanÃ§amentos em Mato Grosso do Sul';
                             } else if (estado === 'SP') {
-                                mainTitle.textContent = 'Lançamentos em São Paulo';
+                                mainTitle.textContent = 'LanÃ§amentos em SÃ£o Paulo';
                             } else {
-                                mainTitle.textContent = 'Lançamentos em destaque';
+                                mainTitle.textContent = 'LanÃ§amentos em destaque';
                             }
-                            console.log('📝 Título atualizado para lançamentos');
+                            console.log('ðŸ“ TÃ­tulo atualizado para lanÃ§amentos');
                         }
                     }
                 });
             </script>
 
-    <!-- Botão Fale Conosco flutuante -->
+    <!-- BotÃ£o Fale Conosco flutuante -->
     <a href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank" class="fale-conosco">
         <i data-lucide="message-square" class="w-5 h-5"></i>
         FALE CONOSCO
     </a>
 
-    <!-- Lógica do Slider de Fotos -->
+    <!-- LÃ³gica do Slider de Fotos -->
     <script>
-        // Esta função impede que o clique nas setas ative o link do card.
+        // Esta funÃ§Ã£o impede que o clique nas setas ative o link do card.
         function navigateSlider(event, cardId, direction) {
-            event.preventDefault(); // Impede o comportamento padrão do <a>
+            event.preventDefault(); // Impede o comportamento padrÃ£o do <a>
             event.stopPropagation(); // Impede que o evento suba para o <a>
 
             const card = document.getElementById(cardId);
@@ -530,10 +530,10 @@
                 }
             });
 
-            // Calcula o próximo slide
+            // Calcula o prÃ³ximo slide
             let nextSlide = currentSlide + direction;
             if (nextSlide < 0) {
-                nextSlide = totalSlides - 1; // Volta para o último
+                nextSlide = totalSlides - 1; // Volta para o Ãºltimo
             } else if (nextSlide >= totalSlides) {
                 nextSlide = 0; // Vai para o primeiro
             }
@@ -550,5 +550,8 @@
 
     </div> <!-- Fecha page-container -->
 
+    <!-- Sistema de Template -->
+    <script src="js/template.js"></script>
 </body>
 </html>
+
