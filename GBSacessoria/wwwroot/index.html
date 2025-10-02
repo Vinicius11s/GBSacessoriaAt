@@ -3,12 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/video-hero.css" />
     <link rel="stylesheet" href="css/SessionLancamentos.css" />
     <link rel="stylesheet" href="css/queroVender.css" />
+    
+    <style>
+        /* Garantir que os links do header mantenham sempre a cor preta */
+        .header-actions a,
+        .header-actions a:link,
+        .header-actions a:visited,
+        .header-actions a:hover,
+        .header-actions a:active,
+        .header-actions a:focus {
+            color: #000 !important;
+        }
+        
+        .header-actions a:hover {
+            color: #333 !important;
+        }
+    </style>
 
-    <title>GBS acessoria</title>
+    <title>GBS Assessoria</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -31,7 +49,7 @@
             </div>
         </div>
 
-        <nav class="nav-pills" aria-label="NavegaÃ§Ã£o principal">
+        <nav class="nav-pills" aria-label="Navegação principal">
             <a href="todasasareas.html" class="pill">Acessar Todas as Ãreas</a>
             <a href="todasasareas.html?estado=MS" class="pill">Mato Grosso do Sul</a>
             <a href="todasasareas.html?estado=SP" class="pill">SÃ£o Paulo</a>
@@ -61,7 +79,7 @@
             </div>
         </div>
         <!-- HERO -->
-        <section class="hero" role="region" aria-label="Destaque de imÃ³veis">
+        <section class="hero" role="region" aria-label="Destaque de imóveis">
             <!-- Slider -->
             <div class="hero-slider">
                 <!-- Slide 1 -->
@@ -83,7 +101,7 @@
                     </picture>
                 </div>
             </div>
-            <!-- ConteÃºdo da hero -->
+            <!-- Conteúdo da hero -->
             <div class="hero-content">
                 <h1 class="hero-title">A VIDA VISTA DO CAMPO</h1>
             </div>
@@ -92,7 +110,7 @@
     </main>
     <section class="novidades">
         <h2 id="cards">Novidades</h2>
-        <p class="subtitulo">Os imÃ³veis que acabaram de chegar, nas regiÃµes mais amadas</p>
+        <p class="subtitulo">Os imóveis que acabaram de chegar, nas regiões mais amadas</p>
         <div class="linha"></div>
         <div class="cards">
             <!-- CARD 1 - 480 hectares Presidente EpitÃ¡cio - SP -->
