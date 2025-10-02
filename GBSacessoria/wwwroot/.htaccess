@@ -1,0 +1,23 @@
+# Configurações para UTF-8
+AddDefaultCharset UTF-8
+
+# Headers para HTML
+<FilesMatch "\.(html|htm)$">
+    Header set Content-Type "text/html; charset=utf-8"
+</FilesMatch>
+
+# Headers para CSS
+<FilesMatch "\.css$">
+    Header set Content-Type "text/css; charset=utf-8"
+</FilesMatch>
+
+# Headers para JavaScript
+<FilesMatch "\.js$">
+    Header set Content-Type "application/javascript; charset=utf-8"
+</FilesMatch>
+
+# Configurações de segurança
+Header always set X-Frame-Options "DENY"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"

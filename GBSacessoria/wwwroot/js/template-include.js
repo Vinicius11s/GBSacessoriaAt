@@ -174,3 +174,4 @@ if (document.readyState === 'loading') {
 } else {
     templateInclude.loadAndApplyLayout();
 }
+

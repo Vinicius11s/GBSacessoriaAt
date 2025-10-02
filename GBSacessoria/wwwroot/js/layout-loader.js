@@ -136,3 +136,4 @@ if (document.readyState === 'loading') {
 } else {
     initializeLayout();
 }
+

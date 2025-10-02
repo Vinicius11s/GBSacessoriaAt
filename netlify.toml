@@ -15,7 +15,7 @@
   to = "/index.html"
   status = 200
 
-# Headers de segurança
+# Headers de segurança e UTF-8
 [[headers]]
   for = "/*"
   [headers.values]
@@ -23,6 +23,13 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Type = "text/html; charset=utf-8"
+
+# Headers específicos para HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
 
 # Cache para arquivos estáticos
 [[headers]]
