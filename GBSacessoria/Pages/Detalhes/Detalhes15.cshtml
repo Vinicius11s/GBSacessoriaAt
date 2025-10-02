@@ -1,0 +1,245 @@
+@page "/detalhes/15"
+@{
+    ViewData["Title"] = "Detalhes do Imóvel";
+}
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/detalhes.css" asp-append-version="true" />
+
+    <title>Detalhes do Imóvel - GBS Assessoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+
+    <!-- Galeria de imagens -->
+    <section class="galeria-nova">
+        <div class="imagem-principal-grande">
+            <img src="~/images/15/capa0.png" alt="Imagem principal do imóvel" id="imagemPrincipal">
+        </div>
+        <div class="imagens-direita">
+            <div class="imagem-direita-superior">
+                <img src="~/images/15/img1.png" alt="Imagem superior direita" class="imagem-lateral" data-src="~/images/15/img1.png">
+            </div>
+            <div class="imagem-direita-inferior">
+                <img src="~/images/15/img2.png" alt="Imagem inferior direita" class="imagem-lateral" data-src="~/images/15/img2.png">
+                <button class="btn-galeria" onclick="abrirGaleria()">Galeria ⧉</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Badge entre as fotos e o nome -->
+    <div class="badge-esquerda">
+        <span class="badge badge-launch">LANÇAMENTO</span>
+    </div>
+    
+    <div class="conteudo-principal">
+        <!-- Informações do imóvel -->
+        <section class="detalhes">
+            <h1>Propriedade à venda na região de Presidente Prudente</h1>
+            <p class="codigo">Cod 15 | Município Presidente Epitácio - SP | <a href="#">Ver no <strong>Mapa</strong></a></p>
+
+            <!-- Características com ícones -->
+            <div class="caracteristicas">
+                <div class="caracteristica-item">
+                    <div class="icone-area">
+                            <img src="~/images/icones/area.png" alt="Área" width="20" height="20">
+                        </div>
+                    <strong>Área Total</strong>
+                        <p>55 hectares</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="icone-dorms">
+                            <img src="~/images/icones/alqueires.png" alt="Alqueires" width="20" height="20">
+                        </div>
+                    <strong>Alqueires</strong>
+                        <p>23 alqueires</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="icone-suites">
+                        <img src="~/images/icones/distancia.png" alt="Distância" width="20" height="20">
+                    </div>
+                    <strong>Distância</strong>
+                        <p>1,5 km da cidade</p>
+                    </div>
+                <div class="caracteristica-item">
+                    <div class="icone-vagas">
+                        <img src="~/images/icones/alqueires.png" alt="Cultura" width="20" height="20">
+                    </div>
+                    <strong>Cultura</strong>
+                        <p>Mandioca</p>
+                    </div>
+            </div>
+                <p class="descricao">
+                    PROPRIEDADE À VENDA NA REGIÃO DE PRESIDENTE PRUDENTE<br><br>
+                    MUNICÍPIO PRESIDENTE EPITÁCIO - SP<br><br>
+                    55 HECTARES OU 23 ALQUEIRES PAULISTA<br><br>
+                    PROPRIEDADE COM ÓTIMA LOCALIZAÇÃO APENAS 1,5 KM DA CIDADE<br><br>
+                    POSSUI:<br><br>
+                    02 CASAS<br>
+                    CASA SEDE E CASA PARA FUNCIONÁRIO<br>
+                    CURRAL NOVO<br>
+                    PISTA DE LAÇO<br>
+                    POÇO CAIPIRA<br>
+                    RESERVATÓRIO 50.000/L<br>
+                    PASTAGEM TODA FORMADA<br>
+                    BARRACÃO<br>
+                    CIRCUITO DE MONITORAMENTO<br><br>
+                    DOCUMENTO 100%<br><br>
+                    VALOR R$ 140.000/ALQUEIRE<br><br>
+                    (VALOR NEGOCIÁVEL FORMA DE PAGAMENTO À COMBINAR)<br><br>
+                    PARA MAIS DETALHES<br>
+                    WHATSAPP<br>
+                    18 996194671 GUSTAVO B<br>
+                    CRECI 278448 F<br>
+                    WWW.GUSTAVOCORRETOR.COM.BR
+                </p>
+            <p class="fotos-aviso">Fotos reais da área comum.</p>
+        </section>
+
+        <!-- Box lateral de preço -->
+        <aside class="preco-box">
+            <p class="valor-label">Valor da venda:</p>
+            <p class="valor">R$ 140.000/ALQUEIRE</p>
+            <br/>
+                <a href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20mais%20informações" class="btn-visita">ENTRAR EM CONTATO</a>
+                <br />
+            <p class="aviso">
+                Os dados fornecidos neste formulário são confidenciais e de uso exclusivo da GBS Assessoria, sendo protegidos de acordo com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018).
+            </p>
+        </aside>
+    </div>
+</main>
+
+    
+
+    <!-- WhatsApp floating -->
+    <a class="whatsapp" href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20mais%20informações" target="_blank">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' stroke='white'><path d='M21 11.5A9.5 9.5 0 1 1 11.5 2a9.5 9.5 0 0 1 9.5 9.5z'/><path d='M21 21l-4.35-1.18'/></svg>">
+        FALE CONOSCO
+    </a>
+
+    <!-- Modal da Galeria -->
+    <div id="modalGaleria" class="modal-galeria" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="fecharGaleria()">&times;</span>
+            <div class="galeria-container">
+                <img id="imagemModal" src="" alt="Imagem da galeria">
+                <button class="prev" onclick="imagemAnterior()">&#10094;</button>
+                <button class="next" onclick="proximaImagem()">&#10095;</button>
+            </div>
+            <div class="thumbnails" id="thumbnails">
+                <!-- Thumbnails serão carregados dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let imagensGaleria = [
+            '~/images/15/capa0.png',
+            '~/images/15/img1.png',
+            '~/images/15/img2.png',
+            '~/images/15/img3.png',
+            '~/images/15/img4.png',
+            '~/images/15/img5.png',
+            '~/images/15/img6.png',
+            '~/images/15/img7.png',
+            '~/images/15/img8.png',
+            '~/images/15/img9.png',
+            '~/images/15/img10.png',
+            '~/images/15/img11.png',
+            '~/images/15/img12.png'
+        ];
+        let imagemAtual = 0;
+
+        function abrirGaleria() {
+            const modal = document.getElementById('modalGaleria');
+            const thumbnails = document.getElementById('thumbnails');
+            
+            modal.style.display = 'block';
+            imagemAtual = 0;
+            
+            // Carregar thumbnails
+            thumbnails.innerHTML = '';
+            imagensGaleria.forEach((imagem, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = imagem.replace('~/', '/');
+                thumbnail.alt = `Imagem ${index + 1}`;
+                thumbnail.onclick = () => mostrarImagem(index);
+                thumbnail.className = index === 0 ? 'active' : '';
+                thumbnails.appendChild(thumbnail);
+            });
+            
+            mostrarImagem(0);
+        }
+
+        function fecharGaleria() {
+            document.getElementById('modalGaleria').style.display = 'none';
+        }
+
+        function mostrarImagem(index) {
+            const imagemModal = document.getElementById('imagemModal');
+            const thumbnails = document.querySelectorAll('#thumbnails img');
+            
+            imagemAtual = index;
+            imagemModal.src = imagensGaleria[index].replace('~/', '/');
+            
+            // Atualizar thumbnails ativos
+            thumbnails.forEach((thumb, i) => {
+                thumb.className = i === index ? 'active' : '';
+            });
+        }
+
+        function proximaImagem() {
+            imagemAtual = (imagemAtual + 1) % imagensGaleria.length;
+            mostrarImagem(imagemAtual);
+        }
+
+        function imagemAnterior() {
+            imagemAtual = (imagemAtual - 1 + imagensGaleria.length) % imagensGaleria.length;
+            mostrarImagem(imagemAtual);
+        }
+
+        // Fechar modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalGaleria');
+            if (event.target === modal) {
+                fecharGaleria();
+            }
+        }
+
+        // Navegação com teclado
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('modalGaleria');
+            if (modal.style.display === 'block') {
+                if (event.key === 'ArrowLeft') {
+                    imagemAnterior();
+                } else if (event.key === 'ArrowRight') {
+                    proximaImagem();
+                } else if (event.key === 'Escape') {
+                    fecharGaleria();
+                }
+            }
+        });
+
+        // Trocar imagem principal ao clicar nas laterais
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagensLaterais = document.querySelectorAll('.imagem-lateral');
+            const imagemPrincipal = document.getElementById('imagemPrincipal');
+            
+            imagensLaterais.forEach(imagem => {
+                imagem.addEventListener('click', function() {
+                    const novaSrc = this.getAttribute('data-src');
+                    imagemPrincipal.src = novaSrc.replace('~/', '/');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

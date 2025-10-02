@@ -1,0 +1,190 @@
+/* Container centralizado com largura alinhada aos cards */
+.container-text {
+    max-width: 1200px; /* igual largura dos cards */
+    margin: 0 auto; /* centraliza */
+    padding: 40px 20px; /* espaçamento interno */
+}
+
+/* Título */
+.video-text-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111; /* preto */
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Subtítulo */
+.video-text-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555; /* cinza médio */
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Linha decorativa */
+.video-text-line {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #2e6b57; /* verde (ajuste a cor se precisar) */
+    border-radius: 2px;
+}
+
+/* Grid de cards */
+.lancamentos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card de Lançamentos */
+.lancamento-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px !important; /* Forçar altura específica */
+    min-height: 450px !important; /* Garantir altura mínima */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.lancamento-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lancamento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagem de fundo do card */
+.lancamento-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+}
+
+/* Título no topo */
+.lancamento-title {
+    position: relative;
+    z-index: 2;
+    padding: 24px 20px 0;
+    color: #fff;
+}
+
+    .lancamento-title h3 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+/* Rodapé na parte inferior */
+.lancamento-footer {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+    .lancamento-footer span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .lancamento-footer span:last-child {
+        font-weight: 600;
+    }
+
+/* Garantir que as imagens sempre apareçam */
+.lancamento-card img {
+    max-width: none !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .lancamentos-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lancamentos-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .lancamento-card {
+        height: 400px !important; /* Aumentar altura em mobile */
+        min-height: 400px !important;
+    }
+    
+    .lancamento-title h3 {
+        font-size: 24px;
+    }
+}
+
+/* Regras para evitar que imagens desapareçam ao redimensionar */
+@media (min-width: 769px) {
+    .lancamentos-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .lancamento-card {
+        height: 450px !important;
+        min-height: 450px !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .lancamentos-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .lancamento-card {
+        height: 450px !important;
+        min-height: 450px !important;
+    }
+}
+
+/* Regra específica para garantir altura dos cards de lançamentos */
+.lancamentos-cards .lancamento-card {
+    height: 450px !important;
+    min-height: 450px !important;
+    max-height: 450px !important;
+}

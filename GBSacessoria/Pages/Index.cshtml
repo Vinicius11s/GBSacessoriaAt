@@ -1,0 +1,443 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/video-hero.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/SessionLancamentos.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/queroVender.css" asp-append-version="true" />
+
+
+    <title>GBS acessoria</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" style="display:none;padding:12px 16px;background:#fff;border-bottom:1px solid rgba(0,0,0,0.04);position:relative;z-index:18">
+            <div style="display:flex;flex-direction:row;gap:8px;flex-wrap:wrap">
+                <a class="pill" href="#">Acessar Todas as Áreas</a>
+            </div>
+        </div>
+        <!-- HERO -->
+        <section class="hero" role="region" aria-label="Destaque de imóveis">
+            <!-- Slider -->
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <picture>
+                        <source media="(min-width: 2000px)" srcset="~/images/fotoHomePage2560x1440Pasto.png">
+                        <source media="(min-width: 1200px)" srcset="~/images/fotoHomePage1920x1097Pasto.png">
+                        <source media="(min-width: 768px)" srcset="~/images/fotoHomePage1920x1097Pasto.png">
+                        <img src="~/images/fotoHomePage2560x1440Pasto.png" alt="Imagem de destaque" class="hero-bg" />
+                    </picture>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <picture>
+                        <source media="(min-width: 2000px)" srcset="~/images/fotoHomePage2560x1440Rio.png">
+                        <source media="(min-width: 1200px)" srcset="~/images/fotoHomePage1920x1080Rio.png">
+                        <source media="(min-width: 768px)" srcset="~/images/fotoHomePage1920x1080Rio.png">
+                        <img src="~/images/fotoHomePage1920x1080Rio.png" alt="Imagem de destaque" class="hero-bg" />
+                    </picture>
+                </div>
+            </div>
+            <!-- Conteúdo da hero -->
+            <div class="hero-content">
+                <h1 class="hero-title">A VIDA VISTA DO CAMPO</h1>
+            </div>
+            <a class="cta-bottom" href="#cards">Ver Áreas</a>
+        </section>
+    </main>
+    <section class="novidades">
+        <h2 id="cards">Novidades</h2>
+        <p class="subtitulo">Os imóveis que acabaram de chegar, nas regiões mais amadas</p>
+        <div class="linha"></div>
+        <div class="cards">
+            <!-- CARD 1 - 480 hectares Presidente Epitácio - SP -->
+            <a href="/detalhes/13" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/13/capa0.png" alt="480 hectares à venda na região de Presidente Prudente - SP">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>FAZENDA</span>
+                        <span>COD 13</span>
+                    </div>
+                    <h3 class="card-titulo">480 hectares à venda na região de Presidente Prudente - SP</h3>
+                    <div class="regiao">Presidente Epitácio - SP</div>
+                    <div class="detalhes">480 hectares | 198 alqueires | 6km da cidade | Montada na pecuária</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">R$ 120.000/ALQUEIRE</div>
+                </div>
+            </a>           
+            <!-- CARD 2 - Fazenda montadíssima Santa Rita do Pardo -->
+            <a href="/detalhes/11" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/11/capa0.png" alt="Fazenda montadíssima à venda na região de Santa Rita do Pardo">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>FAZENDA</span>
+                        <span>COD 11</span>
+                    </div>
+                    <h3 class="card-titulo">Fazenda montadíssima à venda na região de Santa Rita do Pardo</h3>
+                    <div class="regiao">Santa Rita do Pardo - MS</div>
+                    <div class="detalhes">129 hectares | 54 alqueires | 40km de Bataguassu | 2 casas</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">R$ 130.000/ALQUEIRE</div>
+                </div>
+            </a>
+            <!-- CARD 3 - Propriedade Bataguassu -->
+            <a href="/detalhes/12" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/12/capa0.png" alt="Propriedade à venda no município de Bataguassu - MS">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>PROPRIEDADE</span>
+                        <span>COD 12</span>
+                    </div>
+                    <h3 class="card-titulo">Propriedade à venda no município de Bataguassu - MS</h3>
+                    <div class="regiao">Bataguassu - MS</div>
+                    <div class="detalhes">3km do asfalto | 2 casas | Curral 6 divisões | Energia trifásica</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">CONSULTAR</div>
+                </div>
+            </a>
+        </div>   
+    <br/>
+        <div class="cards">
+            <!-- CARD 4 - Propriedade Presidente Prudente -->
+            <a href="/detalhes/05" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/5/capa0.png" alt="Propriedade à venda região de Presidente Prudente - SP">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>PROPRIEDADE</span>
+                        <span>COD 05</span>
+                    </div>
+                    <h3 class="card-titulo">Propriedade à venda região de Presidente Prudente - SP</h3>
+                    <div class="regiao">Presidente Prudente - SP</div>
+                    <div class="detalhes">43 hectares | Terra rica em água | Casa sede</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">R$ 120.000/ALQUEIRE</div>
+                </div>
+            </a>           
+            <!-- CARD 5 - Fazenda Bataguassu -->
+            <a href="/detalhes/01" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/1/capa0.png" alt="Fazenda à venda no município de Bataguassu - MS">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>FAZENDA</span>
+                        <span>COD 01</span>
+                    </div>
+                    <h3 class="card-titulo">Fazenda à venda no município de Bataguassu - MS</h3>
+                    <div class="regiao">Bataguassu - MS</div>
+                    <div class="detalhes">Casa | Curral | Barracão | Poço Artesiano</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">R$ 150.000/ALQUEIRE</div>
+                </div>
+            </a>
+            <!-- CARD 6 - Fazenda Nova Andradina -->
+            <a href="/detalhes/14" class="card">
+                <div class="card-imagem-container">
+                    <span class="badge">EXCLUSIVIDADE</span>
+                    <div class="card-imagem">
+                        <img src="~/images/14/capa0.png" alt="Fazenda à venda na região de Nova Andradina - MS">
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="tipo-cod">
+                        <span>FAZENDA</span>
+                        <span>COD 14</span>
+                    </div>
+                    <h3 class="card-titulo">Fazenda à venda na região de Nova Andradina - MS</h3>
+                    <div class="regiao">Nova Andradina - MS</div>
+                    <div class="detalhes">283 hectares | 118 alqueires | 7km do asfalto | Plantada mandioca</div>
+                    <div class="valor-label">Venda:</div>
+                    <div class="valor">CONSULTAR</div>
+                </div>
+            </a>        
+        </div>
+    </section>
+    <a href="/TodasAsAreas" class="btn-more">Ver mais Áreas</a>
+    
+    <!-- SEÇÃO DE APRESENTAÇÃO DO VÍDEO -->
+    <section class="video-text-section">
+        <div class="container-text">
+            <h2 class="video-text-title">Nosso olhar em movimento</h2>
+            <p class="video-text-subtitle">Explore em vídeo as melhores áreas da GBS acessoria.</p>
+            <span class="video-text-line"></span>
+        </div>
+    </section>
+
+    <!-- SESSÃO DE VIDEO - TELA CHEIA -->
+        <section class="video-hero-section">
+            <div class="video-hero-container">
+                <!-- Vídeo de fundo -->
+                <video class="video-hero-bg" autoplay muted loop playsinline preload="auto" webkit-playsinline>
+                    <source src="/images/videoCERTO.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>        
+                <!-- Overlay escuro -->
+                <div class="video-hero-overlay"></div>        
+                <!-- Conteúdo sobreposto -->
+                <div class="video-hero-content">
+                    <div class="align-col">
+                        <h1 class="video-hero-title">Fazenda no município de Bataguassu - MS</h1>
+                        <a href="/detalhes/01" class="video-hero-btn">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- SEÇÃO DE LANÇAMENTOS -->
+    <section class="container-text">
+        <div class="video-text-title">
+            <h2>Propriedades exclusivas em destaque</h2>
+            <p class="video-text-subtitle">Seleção especial de imóveis rurais com excelente localização</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="lancamentos-cards">
+            <!-- Card 1 - 480 hectares Presidente Epitácio - SP -->
+            <a href="/detalhes/13" class="lancamento-card">
+                <img src="~/images/13/capa0.png" alt="480 hectares à venda na região de Presidente Prudente - SP" class="lancamento-bg">
+                <div class="lancamento-title">
+                    <h3>480 hectares - Presidente Epitácio</h3>
+                </div>
+                <div class="lancamento-footer">
+                    <span>Presidente Epitácio - SP</span>
+                </div>
+            </a>
+            <!-- Card 2 - Fazenda montadíssima Santa Rita do Pardo -->
+            <a href="/detalhes/11" class="lancamento-card">
+                <img src="~/images/11/capa0.png" alt="Fazenda montadíssima à venda na região de Santa Rita do Pardo" class="lancamento-bg">
+                <div class="lancamento-title">
+                    <h3>Fazenda Montadíssima</h3>
+                </div>
+                <div class="lancamento-footer">
+                    <span>Santa Rita do Pardo - MS</span>
+                </div>
+            </a>
+            <!-- Card 3 - Propriedade Bataguassu -->
+            <a href="/detalhes/12" class="lancamento-card">
+                <img src="~/images/12/capa0.png" alt="Propriedade à venda no município de Bataguassu - MS" class="lancamento-bg">
+                <div class="lancamento-title">
+                    <h3>Propriedade Bataguassu</h3>
+                </div>
+                <div class="lancamento-footer">
+                    <span>Bataguassu - MS</span>
+                </div>
+            </a>         
+        </div>
+        <a href="/TodasAsAreas?lancamentos=true" class="btn-more">Descobrir agora</a>
+    </section>
+    <!--QUER VENDER SEU IMÓVEL-->
+    <section class="imovel-cta">
+        <div class="imovel-cta-container">
+            <div class="imovel-cta-imagem">
+                <img src="~/images/12/capa0.png" alt="Descrição da imagem do imóvel" />
+            </div>
+            <div class="imovel-cta-conteudo">
+                <h2>Quer vender seu imóvel?</h2>
+                <p>Cuidamos de cada etapa da venda ou locação, com atenção a todos os detalhes</p>
+                <a href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20vender%20meu%20imóvel" class="imovel-cta-link">
+                    Conheça mais <span class="arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp  -->
+    <a class="whatsapp" href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20mais%20informações" target="_blank" style="display: none;">
+        <img src="~/images/icons8-whatsapp-50.png" width="20px" height="20px" alt="WhatsApp">
+        <span class="whatsapp-text">FALE CONOSCO</span>
+    </a>
+    <script>
+        // Slider automático
+        window.onload = function() {
+            const slider = document.querySelector(".hero-slider");
+            let currentSlide = 0;
+            function moveSlider() {
+                currentSlide = (currentSlide + 1) % 2;
+                
+                if (slider) {
+                    slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+                }
+            }          
+            // Troca automática a cada 5 segundos
+            setInterval(function() {
+                moveSlider();
+            }, 5000);
+        };
+
+        // Esconder botão WhatsApp quando estiver sobre o hero
+        window.addEventListener('scroll', function() {
+            const whatsappButton = document.querySelector('.whatsapp');
+            const heroSection = document.querySelector('.hero');
+            
+            if (whatsappButton && heroSection) {
+                const heroRect = heroSection.getBoundingClientRect();
+                const heroBottom = heroRect.bottom;
+                
+                // Se o hero ainda está visível na tela, esconde o botão
+                if (heroBottom > 0) {
+                    whatsappButton.style.opacity = '0';
+                    whatsappButton.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        whatsappButton.style.display = 'none';
+                    }, 300);
+                } else {
+                    whatsappButton.style.display = 'flex';
+                    setTimeout(() => {
+                        whatsappButton.style.opacity = '1';
+                        whatsappButton.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+            }
+        });
+        // Mobile menu funcional
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', ()=>{
+                const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', String(!expanded));
+                mobileMenu.style.display = expanded ? 'none' : 'block';
+            });
+        }
+        // Vídeo de fundo com loop garantido
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.video-hero-bg');
+            if (video) {
+                // Configurações do vídeo
+                video.loop = true;
+                video.muted = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                video.setAttribute('loop', 'true');
+                video.setAttribute('muted', 'true');
+                video.setAttribute('autoplay', 'true');
+                video.setAttribute('playsinline', 'true');
+                
+                // Função para reiniciar o vídeo
+                function restartVideo() {
+                    video.currentTime = 0;
+                    video.play().catch(e => {
+                        console.log('Erro ao reiniciar vídeo:', e);
+                        // Tentar novamente após um pequeno delay
+                        setTimeout(() => {
+                            video.play().catch(err => console.log('Segunda tentativa falhou:', err));
+                        }, 100);
+                    });
+                }
+                
+                // Evento quando o vídeo termina
+                video.addEventListener('ended', function() {
+                    console.log('Vídeo terminou, reiniciando...');
+                    restartVideo();
+                });
+                
+                // Evento quando o vídeo começa a tocar
+                video.addEventListener('play', function() {
+                    console.log('Vídeo iniciado');
+                });
+                
+                // Evento para detectar quando o vídeo está próximo do fim
+                video.addEventListener('timeupdate', function() {
+                    // Se estiver nos últimos 0.5 segundos, reiniciar
+                    if (this.duration - this.currentTime < 0.5 && this.duration > 0) {
+                        console.log('Vídeo próximo do fim, reiniciando...');
+                        restartVideo();
+                    }
+                });
+                
+                // Evento quando os metadados são carregados
+                video.addEventListener('loadedmetadata', function() {
+                    console.log(`Duração do vídeo: ${this.duration} segundos`);
+                });
+                
+                // Tentar reproduzir o vídeo
+                video.play().catch(e => {
+                    console.log('Erro no autoplay:', e);
+                    // Tentar novamente após um delay
+                    setTimeout(() => {
+                        video.play().catch(err => console.log('Segunda tentativa de autoplay falhou:', err));
+                    }, 500);
+                });
+                
+                // Verificar se o vídeo está pausado e tentar reproduzir
+                setInterval(() => {
+                    if (video.paused && !video.ended) {
+                        console.log('Vídeo pausado inesperadamente, tentando reproduzir...');
+                        video.play().catch(e => console.log('Erro ao retomar vídeo:', e));
+                    }
+                }, 2000);
+            }
+
+            // Animação dos cards ao entrar na viewport
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos os cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                // Adicionar delay escalonado para cada card
+                card.style.transitionDelay = `${index * 0.1}s`;
+                cardObserver.observe(card);
+            });
+
+            // Observar cards de lançamentos
+            const lancamentoCards = document.querySelectorAll('.lancamento-card');
+            lancamentoCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.15}s`;
+                cardObserver.observe(card);
+            });
+
+            // Observar seções e botões
+            const sections = document.querySelectorAll('.novidades, .video-text-section, .imovel-cta, .btn-more');
+            sections.forEach(section => {
+                cardObserver.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
+

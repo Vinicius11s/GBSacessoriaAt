@@ -1,0 +1,184 @@
+@page "/detalhes/06"
+@{
+    ViewData["Title"] = "Detalhes do Imóvel";
+}
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/detalhes.css" asp-append-version="true" />
+
+    <title>Detalhes do Imóvel - GBS Assessoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+
+    <!-- Galeria de imagens -->
+    <section class="galeria-nova">
+        <div class="imagem-principal-grande">
+            <img src="~/images/6/capa0.png" alt="Imagem principal do imóvel" id="imagemPrincipal">
+        </div>
+        <div class="imagens-direita">
+            <div class="imagem-direita-superior">
+                <img src="~/images/6/img1.png" alt="Imagem superior direita" class="imagem-lateral" data-src="~/images/6/img1.png">
+            </div>
+            <div class="imagem-direita-inferior">
+                <img src="~/images/6/img2.png" alt="Imagem inferior direita" class="imagem-lateral" data-src="~/images/6/img2.png">
+                <button class="btn-galeria" onclick="abrirGaleria()">Galeria ⧉</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="conteudo-principal">
+        <!-- Informações do imóvel -->
+        <section class="detalhes">
+            <h1>Propriedade à venda 25 km de Presidente Prudente - SP</h1>
+            <p class="codigo">Cod 06 | <a href="#">Ver no <strong>Mapa</strong></a></p>
+
+            <!-- Características (padrão unificado) -->
+            <div class="caracteristicas">
+                <div class="caracteristica-item">
+                    <div class="icone-area">
+                        <img src="~/images/icones/area.png" alt="Área" width="20" height="20">
+                    </div>
+                    <strong>Área Total</strong>
+                    <p>72 hectares</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="icone-dorms">
+                        <img src="~/images/icones/alqueires.png" alt="Alqueires" width="20" height="20">
+                    </div>
+                    <strong>Alqueires</strong>
+                    <p>30 alqueires</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="icone-suites">
+                        <img src="~/images/icones/distancia.png" alt="Distância" width="20" height="20">
+                    </div>
+                    <strong>Distância</strong>
+                    <p>5 km do asfalto</p>
+                </div>
+            </div>
+
+            <!-- Descrição (padrão unificado) -->
+            <p class="descricao">
+                PROPRIEDADE À VENDA 25 KM DE PRESIDENTE PRUDENTE - SP<br><br>
+                ÁREA TOTAL DE 72 HECTARES OU 30 ALQUEIRES PAULISTA<br><br>
+                ÓTIMA LOCALIZAÇÃO A 5 KM DO ASFALTO<br><br>
+                TOPGRAFIA EXCELENTE E ACESSO FÁCIL<br><br>
+                PARA MAIS DETALHES WHATSAPP 18 996194671<br>
+                CRECI 278448 - F
+            </p>
+
+        </section>
+
+        <!-- Box lateral de preço (padrão unificado) -->
+        <aside class="preco-box">
+            <p class="valor-label">Valor da venda:</p>
+            <p class="valor">R$ 160.000/ALQUEIRE</p>
+            <br/>
+            <a href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20mais%20informações" class="btn-visita">ENTRAR EM CONTATO</a>
+            <br />
+            <p class="aviso">
+                Os dados fornecidos neste formulário são confidenciais e de uso exclusivo da GBS Assessoria, sendo protegidos de acordo com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018).
+            </p>
+        </aside>
+    </div>
+
+    </main>
+
+    <!-- Modal da galeria -->
+    <div id="modalGaleria" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharGaleria()">&times;</span>
+            <div class="galeria-container">
+                <img id="imagemModal" src="" alt="Imagem da galeria">
+                <div class="controles-galeria">
+                    <button onclick="imagemAnterior()" class="btn-controle">❮</button>
+                    <button onclick="proximaImagem()" class="btn-controle">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp flutuante -->
+    <a class="whatsapp" href="https://wa.me/5518996194671?text=Olá%20gostaria%20de%20mais%20informações" target="_blank">
+        <img src="~/images/icons8-whatsapp-50.png" width="20px" height="20px" alt="WhatsApp">
+        <span class="whatsapp-text">FALE CONOSCO</span>
+    </a>
+
+    <script>
+        // Array de imagens da galeria
+        const imagens = [
+            '~/images/6/capa0.png',
+            '~/images/6/img1.png',
+            '~/images/6/img2.png',
+            '~/images/6/img3.png',
+            '~/images/6/img4.png',
+            '~/images/6/img5.png',
+            '~/images/6/img6.png',
+            '~/images/6/img7.png',
+            '~/images/6/img8.png',
+            '~/images/6/img9.png',
+            '~/images/6/img10.png'
+        ];
+
+        let imagemAtual = 0;
+
+        // Função para abrir a galeria
+        function abrirGaleria() {
+            document.getElementById('modalGaleria').style.display = 'block';
+            mostrarImagem(0);
+        }
+
+        // Função para fechar a galeria
+        function fecharGaleria() {
+            document.getElementById('modalGaleria').style.display = 'none';
+        }
+
+        // Função para mostrar imagem específica
+        function mostrarImagem(index) {
+            imagemAtual = index;
+            document.getElementById('imagemModal').src = imagens[imagemAtual];
+        }
+
+        // Função para próxima imagem
+        function proximaImagem() {
+            imagemAtual = (imagemAtual + 1) % imagens.length;
+            mostrarImagem(imagemAtual);
+        }
+
+        // Função para imagem anterior
+        function imagemAnterior() {
+            imagemAtual = (imagemAtual - 1 + imagens.length) % imagens.length;
+            mostrarImagem(imagemAtual);
+        }
+
+        // Event listeners para as imagens laterais
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagensLaterais = document.querySelectorAll('.imagem-lateral');
+            imagensLaterais.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    const src = this.getAttribute('data-src');
+                    document.getElementById('imagemPrincipal').src = src;
+                });
+            });
+        });
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalGaleria');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

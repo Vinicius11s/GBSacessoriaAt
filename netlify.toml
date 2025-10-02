@@ -1,0 +1,41 @@
+[build]
+  # Pasta de publicação (onde ficam os arquivos estáticos)
+  publish = "GBSacessoria/wwwroot"
+  
+  # Comando de build (não necessário para site estático)
+  command = "echo 'Site estático - sem build necessário'"
+
+[build.environment]
+  # Variáveis de ambiente se necessário
+  NODE_VERSION = "18"
+
+# Redirecionamentos para SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache para arquivos estáticos
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

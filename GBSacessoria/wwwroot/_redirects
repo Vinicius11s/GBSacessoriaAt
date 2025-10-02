@@ -1,0 +1,23 @@
+# Redirecionamentos para páginas específicas
+/detalhes/01 /detalhes01.html 200
+/detalhes/02 /detalhes02.html 200
+/detalhes/03 /detalhes03.html 200
+/detalhes/04 /detalhes04.html 200
+/detalhes/05 /detalhes05.html 200
+/detalhes/06 /detalhes06.html 200
+/detalhes/07 /detalhes07.html 200
+/detalhes/08 /detalhes08.html 200
+/detalhes/09 /detalhes09.html 200
+/detalhes/10 /detalhes10.html 200
+/detalhes/11 /detalhes11.html 200
+/detalhes/12 /detalhes12.html 200
+/detalhes/13 /detalhes13.html 200
+/detalhes/14 /detalhes14.html 200
+/detalhes/15 /detalhes15.html 200
+/detalhes/16 /detalhes16.html 200
+
+/TodasAsAreas /todasasareas.html 200
+/Sobre /sobre.html 200
+
+# Redirecionamento padrão para index
+/* /index.html 200

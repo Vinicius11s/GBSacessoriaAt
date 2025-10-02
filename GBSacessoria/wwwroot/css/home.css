@@ -1,0 +1,650 @@
+html {
+    background-color:white;
+    scroll-behavior: smooth; /* ativa scroll suave em todo o site */
+}
+
+:root {
+    --bg-dark: rgba(8,8,8,0.55);
+    --accent: #0b5f4a;
+    --pill-border: #e6e6e6;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #222;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+/* Header */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    background: #fff;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 6px
+}
+
+    .brand small {
+        display: block;
+        font-weight: 300;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+.logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-pills {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    justify-content: center
+}
+
+.pill,
+.pill:link,
+.pill:visited,
+.pill:hover,
+.pill:active {
+    padding: 8px 14px;
+    border: 1px solid var(--pill-border);
+    border-radius: 12px;
+    font-size: 14px;
+    background: transparent;
+    cursor: pointer;
+    color: black;
+}
+
+.header-actions {
+    display: flex;
+    gap: 40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header-actions a,
+.header-actions a:link,
+.header-actions a:visited,
+.header-actions a:active,
+.header-actions a:focus {
+    color: #000 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-actions a:hover {
+    color: #333 !important;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Remover overlay da seção de vídeo */
+.custom-video-hero::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+}
+
+/* DESABILITAR OVERLAY PARA VÍDEO - SOLUÇÃO ESPECÍFICA */
+.video-hero::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+}
+
+/* Desabilitar qualquer overlay que possa afetar o vídeo */
+.video-hero *::after,
+.video-slider *::after,
+.video-slide *::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    color: white !important;
+}
+.hero-title {
+    font-size: 64px;
+    margin: 24px 0 12px 0;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+    color: white;
+    white-space: nowrap;
+}
+.cta-bottom {
+    position: absolute; /* fixo na tela */
+    bottom: 120px; /* distância da parte inferior */
+    left: 20px; /* distância da lateral esquerda */
+    background: rgba(255,255,255,0.9);
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #111;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10; /* acima de outros elementos */
+    transform: none; /* remove deslocamento */
+}
+
+.cta-bottom:hover {
+    background: rgba(255,255,255,1);
+}
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    right: 16px; /* encosta mais na lateral */
+    bottom: 16px; /* encosta mais embaixo */
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 12px; /* menor que 12px 16px */
+    border-radius: 8px;
+    display: flex;
+    gap: 6px; /* menos espa�o entre �cone e texto */
+    align-items: center;
+    font-size: 14px; /* tamanho da fonte reduzido */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Hamburger button - hidden by default */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+/* Mobile menu - hidden by default */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu.show {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    padding: 80px 0 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.show .mobile-menu-content {
+    transform: translateX(0);
+}
+
+.mobile-menu-link {
+    display: block;
+    padding: 16px 24px;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.mobile-menu-link:last-child {
+    border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .nav-pills {
+        display: none;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .topbar {
+        padding: 16px 20px;
+    }
+
+    .hero-content {
+        padding: 40px 24px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        white-space: nowrap;
+    }
+
+    .hero-sub {
+        font-size: 14px
+    }
+
+    .cta-bottom {
+        left: 14px;
+        bottom: 60px; /* mantém no canto inferior, não sobrepondo a hero */
+        font-size: 14px;
+    }
+    
+    /* Garantir que as imagens apareçam no mobile */
+    .slide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        min-height: 100vh;
+    }
+    
+    .hero-slider {
+        height: 100vh !important;
+    }
+    
+    .slide {
+        min-width: 100% !important;
+        height: 100vh !important;
+    }
+    
+}
+/*cards*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111;
+    background: #fff;
+}
+
+.novidades {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+    .novidades h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+
+.linha {
+    width: 60px;
+    height: 4px;
+    background: #1f4037;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards de imóveis - especificidade para evitar conflitos */
+.cards .card,
+.novidades .card {
+    background: #fff;
+    /* Arredondamento dos 4 cantos */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+    border: none;
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Estado visível dos cards */
+.cards .card.visible,
+.novidades .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação para seções */
+.novidades,
+.video-text-section,
+.imovel-cta {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.novidades.visible,
+.video-text-section.visible,
+.imovel-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação para botões */
+.btn-more {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.btn-more.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    .cards .card:hover,
+    .novidades .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+/* Container da imagem do card (igual TodosOsImoveis) */
+.cards .card-imagem-container,
+.novidades .card-imagem-container {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.cards .card-imagem,
+.novidades .card-imagem {
+    position: relative;
+    height: 100%;
+}
+
+    .cards .card-imagem img,
+    .novidades .card-imagem img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+
+.cards .badge,
+.novidades .badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #fff;
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 11;
+}
+
+.cards .badge-launch,
+.novidades .badge-launch {
+    background: #1a5f3f;
+    color: #fff;
+}
+
+.cards .card-info,
+.novidades .card-info {
+    padding: 16px 18px 20px;
+}
+
+.cards .tipo-cod,
+.novidades .tipo-cod {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #777;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cards .card-info h3, 
+.cards .card-titulo,
+.novidades .card-info h3, 
+.novidades .card-titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    color: #111;
+}
+
+.cards .regiao,
+.novidades .regiao {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.cards .detalhes,
+.novidades .detalhes {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.cards .valor-label,
+.novidades .valor-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.cards .valor,
+.novidades .valor {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111;
+    line-height: 1;
+}
+
+/* Card Links */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+    transform: translateY(-5px);
+}
+
+.card-link:hover .card {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-link:focus {
+    outline: 2px solid #1f4037;
+    outline-offset: 2px;
+}
+
+/* Botão Ver mais imóveis */
+.btn-more {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 24px;
+    background: white;
+    color: #1a365d;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    max-width: 200px;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-more:hover {
+    background: #f7fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Garantir que as imagens dos cards sempre apareçam */
+.cards .card-imagem-container img,
+.cards .card img {
+    max-width: none !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Responsividade para cards */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .novidades {
+        padding: 0 15px;
+    }
+}
+
+/* Regras para evitar que imagens desapareçam ao redimensionar */
+@media (min-width: 769px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
